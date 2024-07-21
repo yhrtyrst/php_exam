@@ -1,13 +1,14 @@
-SOLID 和設計模式說明
-單一職責原則（SRP）：OrderRequest 負責驗證請求數據，OrderService 負責業務邏輯。
-開放封閉原則（OCP）：可以通過擴展 OrderService 來添加新功能，而不需要修改其內部代碼。
-里氏替換原則（LSP）：可以替換 OrderService 的實現，並且不會影響 OrderController 的工作。
-接口隔離原則（ISP）：每個類只依賴其所需的功能（例如，OrderService 只處理訂單的檢查和轉換）。
-依賴倒置原則（DIP）：OrderController 依賴於 OrderService 的抽象（接口）而不是具體實現。
+# SOLID 和設計模式說明
+## 單一職責原則（SRP）：OrderRequest 負責驗證請求數據，OrderService 負責業務邏輯。
+## 開放封閉原則（OCP）：可以通過擴展 OrderService 來添加新功能，而不需要修改其內部代碼。
+## 里氏替換原則（LSP）：可以替換 OrderService 的實現，並且不會影響 OrderController 的工作。
+## 接口隔離原則（ISP）：每個類只依賴其所需的功能（例如，OrderService 只處理訂單的檢查和轉換）。
+## 依賴倒置原則（DIP）：OrderController 依賴於 OrderService 的抽象（接口）而不是具體實現。
 
 
-資料庫測驗
+#資料庫測驗
 
+##題目一
 WITH top_ten_orders AS (
     SELECT 
         o.bnb_id,
@@ -33,7 +34,8 @@ FROM
 JOIN 
     bnbs b ON t.bnb_id = b.id;
 	
-1. 加index
+##題目二
+1.加index
 CREATE INDEX idx_orders_created_at_currency ON orders (created_at, currency);
 CREATE INDEX idx_orders_bnb_id ON orders (bnb_id);
 2.看執行計畫
